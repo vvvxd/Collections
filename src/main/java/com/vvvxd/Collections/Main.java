@@ -8,7 +8,7 @@ import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {10, 5, 3, 4, 6};
+        int[] arr = {10, 5, 3,5, 4, 6};
         System.out.println(checkDuplicates(arr));
         int[] arr2 = {10, 5, 3, 1,4, 6};
         System.out.println(indicesSumOfTwo(arr2, 9));
@@ -17,9 +17,8 @@ public class Main {
     static boolean checkDuplicates(int[] arr) {
         HashSet<Integer> set = new HashSet<>();
         for (int j : arr) {
-            if (set.contains(j))
+            if (!set.add(j))
                 return true;
-            set.add(j);
         }
         return false;
     }
